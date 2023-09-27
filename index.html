@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Diffusion-Guided 3D Policy Learning for Generalizable Robotic Manipulation">
-  <meta name="keywords" content="Neural Rendering, Foundation Models, Robotic Manipulation">
+  <meta name="keywords" content="Neural Rendering, Robotic Manipulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NeRFuser</title>
+  <title>NerFuser</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>
   <script>
@@ -18,7 +18,38 @@
     gtag('config', 'G-FV4ZJ9PVSV');
   </script>
 
+  <script>
+    function updateSingleVideo() {
+      var task = document.getElementById("single-menu-tasks").value;
+      var inst = document.getElementById("single-menu-instances").value;
 
+      console.log("single", task, inst)
+
+      var video = document.getElementById("multi-task-result-video");
+      video.src = "media/results/sim_rollouts/" + 
+                  "compressed_" +
+                  task +
+                  "-" +
+                  inst +
+                  ".mp4"
+      video.playbackRate = 1.75;
+      video.play();
+    }
+
+    function updateQpredVideo() {
+      var task = document.getElementById("single-menu-qpred").value;
+
+      console.log("qpred", task)
+
+      var video = document.getElementById("q-pred-video");
+      video.src = "media/results/qpred/" + 
+                  task + 
+                  ".mp4"
+      video.playbackRate = 1.75;
+      video.play();
+    }
+
+  </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -37,8 +68,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body>
-
+<body onload="updateSingleVideo(); updateQpredVideo();">
 
 
 <section class="hero">
@@ -46,73 +76,82 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-3 publication-title">Diffusion-Guided 3D Policy Learning for Generalizable Robotic Manipulation</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              Anonymous
+          <h1 class="title is-1 publication-title">Diffusion-Guided 3D Policy Learning for Generalizable Robotic Manipulation</h1>
+          <h3 class="title is-4 conference-authors"><a target="_blank" href="">Anonymous</a></h3>
+<!--           <div class="is-size-5 publication-authors">
             </span>
           </div>
 
-
-
-            </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Artificial Intelligence Laboratory,</span>
+            <span class="author-block"><sup>3</sup>Shanghai Qi Zhi Institute</span>
           </div>
-<!--           <br>
-          <br> -->
 
+          <div class="is-size-6 publication-authors"> *Equal Contribution </div> -->
 
+<!--           <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/pdf/2306.10474.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/abs/2306.10474"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a target="_blank" href="https://youtu.be/UdzoagBgWTA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://semantic-geometric-representation.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+            </div> -->
+
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
 <section class="hero teaser">
   <div class="container is-fullhd">
     <div class="hero-body">
-      <img src="figures/main.png" alt="Description of the image">
+      <img src="/figures/main.png" alt="Description of the image">
       <h2 class="subtitle has-text-centered">
       </br>
         Leveraging semantic information from massive 2D images and geometric information from 
         3D point clouds, we present Semantic-Geometric Representation (SGR) that enables the robots 
         to solve a range of simulated and real-world manipulation tasks.
       </h2>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-block">
-          <video poster="" id="block" autoplay muted loop width="50%">
-            <source src="/videos/Stack_block.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-                <div class="item item-shape">
-          <video poster="" id="shape" autoplay muted loop width="50%">
-            <source src="/videos/sweep_dustpan.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-block-bowl">
-          <video poster="" id="block-bowl" autoplay muted loop width="50%">
-            <source src="media/videos/hit_ball.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-        <div class="item item-block">
-          <video poster="" id="block" autoplay muted loop width="50%">
-            <source src="media/videos/put_in_bin.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -127,70 +166,191 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-		This paper presents NeRFuser, a language-conditioned multi-task policy framework that integrates neural rendering pre-training and diffusion training to enforce multi-modality learning in action sequence spaces. Leveraging feature distilled 
-		from foundation models such as Stable Diffusion, we learn a generalizable 3D 
-		representation by pre-training a 3D voxel encoder via neural rendering. 
-		Consequently, it allows various application to challenging robotic tasks requiring rich 
-		3D semantics and accurate geometry. Furthermore, we introduce a novel approach 
-		utilizing diffusion training to optimize features fused with vision and language 
-		embeddings. By concentrating on the optimization of fused features and predict
-		actions with an additional policy network, we not only eliminate the need for
-		time-consuming denoising process during action inference but also align features
-		with the multi-modality inherent in multi-task demonstrations, thereby enhancing
-		robustness and generalizability. NeRFuser significantly surpasses SOTA NeRF-
-		based multi-task manipulation approaches, achieving a 1.37x increase in success rate.
+          <p>
+            This paper presents NeRFuser, a language-conditioned multi-task policy framework that integrates neural rendering pre-training and diffusion training to enforce multi-modality learning in action sequence spaces. 
+		  Leveraging feature distilled from foundation models such as Stable Diffusion, we learn a generalizable 3D representation by pre-training a 3D voxel encoder via neural rendering. 
+		  Consequently, it allows various application to challenging robotic tasks requiring rich 3D semantics and accurate geometry. 
+		  Furthermore, we introduce a novel approach utilizing diffusion training to optimize features fused with vision and language embeddings. 
+		  By concentrating on the optimization of fused features and predict actions with an additional policy network, we not only eliminate the need for time-consuming denoising process during action inference but also align features with the multi-modality inherent in multi-task demonstrations, thereby enhancing robustness and generalizability. 
+		  NeRFuser significantly surpasses SOTA NeRF- based multi-task manipulation approaches, achieving a 1.37x increase in success rate.
+          </p>
         </div>
-          <br>
       </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-  <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-two-thirds">
-
-                <h2 class="title is-3">Video</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/5IZkbUFB2cM" width="1028" height="578" allow="autoplay"></iframe>
-        </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-widescreen">
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+
     <div class="rows">
-    <!-- Animation. -->
-      <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-    <!--<div class="rows is-centered ">
-      <div class="row is-full-width">-->
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
-        <!-- <br> -->
-        </div>
-        </br>
-        <img src="media/figures/method.jpg" class="interpolation-image"
+
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <h2 class="title is-3"><span class="dperact">Semantic-Geometric Representation</span></h2>
+
+        <img src="media/figures/architecture.png" class="interpolation-image" 
          alt="Interpolate start reference image." />
         </br>
         </br>
           <p>
-The pipeline of policy adaptation from foundation model feedback (PAFF). When we adapt a trained policy to a new task,
-              we first let the robot <b>play</b>, that is, the policy continuously predicts and performs actions given a series of randomly generated language instructions.
-              We record these demonstrations including the visual observations and the model's actions. After that, we let the model <b>relabel</b>, that is,
-              the vision-language foundation model relabels the demonstrations by retrieving the language instructions given the recorded visual observations.
-              We then fine-tune the policy with the accurate paired observations and instructions, and the corresponding actions, which are collected in an automatic way.
+            We first utilize a large vision foundation model, pre-trained on massive amounts 
+            of internet data (e.g., CLIP), to encode semantic feature maps from 2D images. 
+            Secondly, the context-rich 2D feature vectors are back-projected into 3D space 
+            and combined with the point cloud features that are extracted from point clouds 
+            using a shallow point-based network. These fused features are fed into a number 
+            of set abstraction (SA) blocks, which jointly model the cross-modal interaction 
+            between 2D semantics and 3D geometry information. Finally, based on the output 
+            representations from the SA blocks, we predict the robotic action to execute.
           </p>
-        <!--/ Re-rendering. -->
-            </div>
-            </div>
-          </div>
-        </div>
-</section>
 
+      </div>
+    </div>
+  </div>
+</section> -->
 
 <section class="section">
-  <div class="container is-max-widescreen">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Real-Robot Results</h2>
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-5">Picking Red Block</h3>
+          <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+            <source src="/videos/Stack_block.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-5">Opening Drawer</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+              <source src="/videos/sweep_dustpan.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-5">Hitting Ball</h3>
+          <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+            <source src="/videos/hit_ball.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-5">Putting in Bowl</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+              <source src="/videos/Put_in_bowl.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-5">Moving Cup to Goal</h3>
+          <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+            <source src="/videos/put_in_bin.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      Matting. -->
+      <div class="column">
+        <h2 class="title is-5">Putting Banana in Pot</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+              <source src="./media/real_robot/banana.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Matting.
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-5">Pressing Handsan</h3>
+          <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+            <source src="./media/real_robot/handsan.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-5">Putting Marker in Drawer</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay muted loop playsinline height="100%">
+              <source src="./media/real_robot/pen.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+  </div>
+</section>
+ -->
+	
+<section class="section">
+  <div class="container is-max-desktop">
 
     <div class="rows">
 
@@ -198,257 +358,63 @@ The pipeline of policy adaptation from foundation model feedback (PAFF). When we
     <!-- Animation. -->
     <div class="rows is-centered ">
       <div class="row is-full-width">
-        <h2 class="title is-3">Sim-to-real Transfer</h2>
-        <p>
-        We train a policy on simulation data and adapt it to the real world.
-          </p>
-          </br>
-        <center>
-        <img src="media/figures/sim2real.png" width="100%" class="interpolation-image"
-         alt="Interpolate start reference image." />
-            </center>
-        </br>
-          </br>
-        <!-- Interpolating. -->
-                <h3 class="title is-4">Comparisn with Baseline</h3>
-        <div class="content has-text-justified">
-          </div>
 
-<div class="columns is-centered">
-      <div class="column">
+        <!--/ Re-rendering. -->
 
-        <div class="content">
+        <h2 class="title is-3">Simulation Results</h2>
 
-          <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-            <source src="media/videos/real_baseline.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+		  
+            One multi-task agent equipped with SGR, evaluated on 
+            <div class="select is-small">     
+              <select id="single-menu-tasks" onchange="updateSingleVideo()">
+              <option value="open_microwave" selected="selected">open microwave</option>
+              <option value="open_door">open door</option>
+              <option value="water_plants">water plants</option>
+              <option value="toilet_seat_up">toilet seat up</option>
+              <option value="phone_on_base">phone on base</option>
+              <option value="put_books_on_bookshelf">put books</option>
+              <option value="take_umbrella_out_of_umbrella_stand">take out umbrella</option>
+              <option value="open_fridge">open fridge</option>
+              </select>
+            </div>
+            episode
+            <div class="select is-small">
+              <select id="single-menu-instances" onchange="updateSingleVideo()">
+              <option value="s1">01</option>
+              <option value="s2" selected="selected">02</option>
+              <option value="s3">03</option>
+              </select>
+            </div>
+            <br/>
+            <br/>
 
-
-
-      <div class="column">
-        <div class="columns is-centered">
-          <div class="column content">
-            <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-              <source src="media/videos/real_our.mp4"
+            <video id="multi-task-result-video"
+                   muted
+                   autoplay
+                   loop
+                   width="100%">
+              <source src="media/results/sim_rollouts/compressed_open_microwave-s2.mp4"
                       type="video/mp4">
             </video>
           </div>
         </div>
-              </div>
-               </div>
-                    </div>
-         </div>
-        <br/>
-        <br/>
-              <br/>
-        <br/>
-         <!-- Animation. -->
-    <div class="rows is-centered ">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Compositional Generalization</h2>
-        <p>
-        We train a policy to pack objects of different shapes in the brown box, and put blocks of different colors in the bowls of different colors, and adapt it to put objects of different shapes in the bowls of different colors.
-          </p>
-          </br>
-        <center>
-        <img src="media/figures/compositional.png" width="76%" class="interpolation-image"
-         alt="Interpolate start reference image." />
-            </center>
-        </br>
-          </br>
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Recorded Demonstration</h3>
-        <div class="content has-text-justified">
-        <!-- <br> -->
-        </div>
-                 <center>
-            <video autoplay muted loop playsinline width="40%" style="border-radius: 10px">
-              <source src="media/videos/record_shape_bowl.mp4"
-                      type="video/mp4">
-            </video>
-          </center>
-        <br/>
-        <br/>
-                <h3 class="title is-4">Comparisn with Baseline</h3>
-        <div class="content has-text-justified">
-          </div>
-
-<div class="columns is-centered">
-      <div class="column">
-
-        <div class="content">
-
-          <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-            <source src="media/videos/shape_bowl_baseline.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-
-
-      <div class="column">
-        <div class="columns is-centered">
-          <div class="column content">
-            <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-              <source src="media/videos/shape_bowl_our.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-              </div>
-               </div>
-                    </div>
-         </div>
-        <br/>
-        <br/>
-              <br/>
-        <br/>
-         <!-- Animation. -->
-    <div class="rows is-centered ">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Out-of-distribution (Unseen Objects)</h2>
-        <p>
-        We train a policy to pack certain objects in the brown box, and adapt it to pack unseen objects.
-          </p>
-          </br>
-        <center>
-        <img src="media/figures/objects.png" width="54%" class="interpolation-image"
-         alt="Interpolate start reference image." />
-            </center>
-        </br>
-          </br>
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Recorded Demonstration</h3>
-        <div class="content has-text-justified">
-        <!-- <br> -->
-        </div>
-                 <center>
-            <video autoplay muted loop playsinline width="40%" style="border-radius: 10px">
-              <source src="media/videos/record_objects.mp4"
-                      type="video/mp4">
-            </video>
-          </center>
-        <br/>
-        <br/>
-                <h3 class="title is-4">Comparisn with Baseline</h3>
-        <div class="content has-text-justified">
-          </div>
-
-<div class="columns is-centered">
-      <div class="column">
-
-        <div class="content">
-
-          <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-            <source src="media/videos/objects_baseline.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-
-
-      <div class="column">
-        <div class="columns is-centered">
-          <div class="column content">
-            <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-              <source src="media/videos/objects_our.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-              </div>
-               </div>
-                    </div>
-         </div>
-        <br/>
-        <br/>
-              <br/>
-        <br/>
-         <!-- Animation. -->
-    <div class="rows is-centered ">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Out-of-distribution (Unseen Environment)</h2>
-        <p>
-        We train a policy on seen environments and adapt it to a new environment with different textures and differently positioned static elements such as the sliding door, the drawer and the light button.
-          </p>
-          </br>
-        <center>
-        <img src="media/figures/environment.png" width="74%" class="interpolation-image"
-         alt="Interpolate start reference image." />
-            </center>
-        </br>
-          </br>
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Recorded Demonstration</h3>
-        <div class="content has-text-justified">
-        <!-- <br> -->
-        </div>
-                 <center>
-            <video autoplay muted loop playsinline width="40%" style="border-radius: 10px">
-              <source src="media/videos/record_calvin.mp4"
-                      type="video/mp4">
-            </video>
-          </center>
-        <br/>
-        <br/>
-                <h3 class="title is-4">Comparisn with Baseline</h3>
-        <div class="content has-text-justified">
-          </div>
-
-<div class="columns is-centered">
-      <div class="column">
-
-        <div class="content">
-
-          <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-            <source src="media/videos/calvin_baseline.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-
-
-      <div class="column">
-        <div class="columns is-centered">
-          <div class="column content">
-            <video autoplay muted loop playsinline width="80%" style="border-radius: 10px">
-              <source src="media/videos/calvin_our.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-              </div>
-               </div>
-                    </div>
-         </div>
-
     </div>
-         </div>
-        </section>
-
-
-
-
-
-<!--
-<section class="section" id="BibTeX">
-  <div class="container is-max-widescreen content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{shridhar2022peract,
-  title     = {Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation}, 
-  author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
-  booktitle = {Proceedings of the 6th Conference on Robot Learning (CoRL)},
-  year      = {2022},
-}</code></pre>
   </div>
 </section>
--->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhang2023universal,
+      title={A Universal Semantic-Geometric Representation for Robotic Manipulation},
+      author={Zhang, Tong and Hu, Yingdong and Cui, Hanchen and Zhao, Hang and Gao, Yang},
+      journal={arXiv preprint arXiv:2306.10474},
+      year={2023}
+    }</code></pre>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
@@ -456,15 +422,13 @@ The pipeline of policy adaptation from foundation model feedback (PAFF). When we
       <div class="column">
         <div class="content has-text-centered">
           <p>
-            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://github.com/cliport/cliport.github.io">CLIPort</a>. 
           </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
-
-
 
 </body>
 </html>
