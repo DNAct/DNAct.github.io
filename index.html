@@ -1,9 +1,8 @@
 
-
 <html><script>window._wordtune_extension_installed = true;</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>NerFuser</title>
 	<meta property="og:title" content="NerFuser">
-	<meta property="og:description" content="Diffusion-Guided 3D Policy Learning for Generalizable Robotic Manipulation">
+	<meta property="og:description" content="NeRFuser: Diffusion Guided Multi-Task 3D Policy Learning">
 
 <style>@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap);</style><style>/**
  * @license
@@ -1559,7 +1558,7 @@
       NerFuser</span> 
       <br>
       <span class="nerf_subheader_v2">
-        Diffusion-Guided 3D Policy Learning for Generalizable Robotic Manipulation</h1>
+        NeRFuser: Diffusion Guided Multi-Task 3D Policy Learning</h1>
       </span>
 	<table class="authors">
 		<tbody>
@@ -1575,11 +1574,11 @@
 </div>
 
 <div class="content">
-	<div class="figure" style="height: 330px; background-image: url(figures/main_method.png); margin-top: -30px;"></div>
+	<div class="figure" style="height: 430px; background-image: url(figures/main_method.png); margin-top: -30px;"></div>
 	<div style="margin: auto; margin-top: -10px" align="center">
 		<p style="text-align: center; color:#4a4a4a; font-weight: 400;">
-    <span style="color: rgb(255,153,0);font-weight: bolder;">NerFuser</span> is a visual behavior cloning agent for <span style="font-weight: bolder;">real-world multi-task robotic manipulation</span>, achieving the success of three tasks in two kitchens with a single policy and <span style="font-weight: bolder;">only 5 demonstrations</span> for each task.
-    NerFuser utilizes a <span style="font-weight: bolder;">Generalizable Neural Feature Field</span> (GNF) to learn a 3D volumetric representation, which is also jointly optimized by the action prediction module.
+    <span style="color: rgb(152, 150, 146);font-weight: bolder;">NerFuser</span> is a generalizable language-conditioned multi-task policy, capable of learning a 3D and multi-modal representation for multi-task manipulation with limited demonstrations.
+    
 		</p>
 	</div>
 </div>
@@ -1612,8 +1611,8 @@
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-shiba">
-            <video poster="" id="shiba" autoplay muted loop height="100%">
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay muted loop height="100%">
               <source src="videos/put_in_bin.mp4"
                       type="video/mp4">
             </video>
@@ -1676,18 +1675,11 @@
 		<h2>Abstract</h2>
 		<p class="abstract">
 			
-      It is a long-standing problem in robotics to develop agents capable of executing diverse manipulation tasks from visual observations in unstructured real-world environments.
-      To achieve this goal, the robot will need to have a comprehensive understanding of the 3D structure and semantics of the scene. 
+      This paper presents NeRFuser, a language-conditioned multi-task policy framework that integrates neural rendering pre-training and diffusion training to enforce multi-modality learning in action sequence spaces. To learn a generalizable multi-task policy with few demonstrations, the pre-training phase of NeRFuser leverages neural rendering to distill 2D semantic features from foundation models such as Stable Diffusion to a 3D space, which provides a comprehensive semantic understanding regarding the scene. Consequently, it allows various applications to challenging robotic tasks requiring rich 3D semantics and accurate geometry.
       <br>
       <br>
-      In this work, we present <span style="color: rgb(255,153,0);font-weight: bolder;">GNFactor</span>, a visual behavior cloning agent for multi-task robotic manipulation with 
-      <span style="color: rgb(255,153,0);font-weight: bolder;">G</span>eneralizable 
-      <span style="color: rgb(255,153,0);font-weight: bolder;">N</span>eural feature <span style="color: rgb(255,153,0);font-weight: bolder;">F</span>ields.
-      GNFactor jointly optimizes a neural radiance field (NeRF) as a reconstruction module and a Perceiver Transformer as a decision-making module, leveraging a shared deep 3D voxel representation.
-      To incorporate semantics in 3D, the reconstruction module incorporates a vision-language foundation model (e.g., Stable Diffusion) to distill rich semantic information into the deep 3D voxel.
-      <br>
-      <br>
-      We evaluate GNFactor on 3 real-robot tasks and perform detailed ablations on 10 RLBench tasks with a limited number of demonstrations. We observe a substantial improvement of GNFactor over current state-of-the-art methods in seen and unseen tasks, demonstrating the strong generalization ability of GNFactor.
+      Furthermore, we introduce a novel approach utilizing diffusion training to learn a vision and language feature that encapsulates the inherent multi-modality in the multi-task demonstrations. By reconstructing the action sequences from different tasks via the diffusion process, the model is capable of distinguishing different modalities and thus improving the robustness and the generalizability of the learned representation.
+      NeRFuser significantly surpasses SOTA NeRF-based multi-task manipulation approaches with over 30% improvement in success rate.
 		</p>
 	</div>
 
@@ -1697,16 +1689,16 @@
 
   <div>
 		<h2>Generalization to Unseen Environments</h2>    
-    <p>We show the generalization ability of <span style="color: rgb(255,153,0);font-weight: bolder;">GNFactor</span>  compared with <span style="color: rgb(32,156,238);font-weight: bolder;">PerAct</span> in both the real world and the simulated environments. GNFactor distills the feature of the vision-language foundation model to help the robotic manipulation, thus learning more generalizable features and more robust to distractors in unseen environments.</p>
+    <p>We show the generalization ability of <span style="color: rgb(114, 112, 108);font-weight: bolder;">NeRFuser</span>  compared with  GNFactor. NeRFuser distills the feature of the vision-language foundation model to help the robotic manipulation, thus learning more generalizable features and more robust to distractors in unseen environments.</p>
     <br>
     <div class="content-video" style="margin-bottom: 48px">
     <div class="content-video-container">
 
       <div class="content-video" style="margin-bottom: 20px">
-        <h4 style="font-weight: bold;">Drag Stick with Distractor </h4>
+        <h4 style="font-weight: bold;">Put item in Drawer with Distractor </h4>
 
           <div class="content-video-frame">
-            <h style="color: rgb(32,156,238);font-weight: bolder;">PerAct</h> <div class="select is-small">
+            <h style="color: rgb(32,156,238);font-weight: bolder;">GNFactor</h> <div class="select is-small">
                 <select id="eps-id-baseline-0" onchange="updateSingleVideoBaseline0()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1718,12 +1710,12 @@
               <br>
             
               <video id="video-baseline-0" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/0_drag_stick_with_distractor/baseline/0.mp4" type="video/mp4">
+                <source src="videos/generalization/baseline/put_item_in_drawer_with_distractor_0.mp4" type="video/mp4">
               </video>
           </div>
 
           <div class="content-video-frame">
-            <h style="color: rgb(255,153,0); font-weight: bolder;">GNFactor</h> (ours) <div class="select is-small">
+            <h style="color: rgb(255,153,0); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-0" onchange="updateSingleVideoOurs0()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1734,7 +1726,7 @@
               </div>
               <br>
               <video id="video-ours-0" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/0_drag_stick_with_distractor/ours/0.mp4" type="video/mp4">
+                <source src="videos/generalization/ours/put_item_in_drawer_with_distractor_0.mp4" type="video/mp4">
               </video>
           </div>
 
@@ -1955,24 +1947,26 @@
   <script>
     function updateSingleVideoBaseline0() {
       var inst = document.getElementById("eps-id-baseline-0").value;
-      var task =  "0_drag_stick_with_distractor";
+      var task =  "put_item_in_drawer_with_distractor_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-baseline-0");
-      video.src = "videos/generalization/" + task + '/baseline/' + inst +".mp4"
+      // video.src = "videos/generalization/" + 'baseline/' + task + inst +".mp4"
+      video.src = "videos/generalization/baseline/put_item_in_drawer_with_distractor_9.mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
     function updateSingleVideoOurs0() {
       var inst = document.getElementById("eps-id-ours-0").value;
-      var task =  "0_drag_stick_with_distractor";
+      var task =  "put_item_in_drawer_with_distractor_";
+      var debug = "videos/generalization/" + 'ours/' + task + inst +".mp4"
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-ours-0");
-      video.src = "videos/generalization/" + task + '/ours/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'ours/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
