@@ -1,7 +1,7 @@
 
 <html><script>window._wordtune_extension_installed = true;</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>NerFuser</title>
-	<meta property="og:title" content="NerFuser">
+	<meta property="og:title" content="NeRFuser">
 	<meta property="og:description" content="NeRFuser: Diffusion Guided Multi-Task 3D Policy Learning">
 
 <style>@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap);</style><style>/**
@@ -1574,7 +1574,7 @@
 </div>
 
 <div class="content">
-	<div class="figure" style="height: 430px; background-image: url(figures/main_method.png); margin-top: -30px;"></div>
+	<div class="figure" style="height: 400px; background-image: url(figures/main_method.png); margin-top: -30px;"></div>
 	<div style="margin: auto; margin-top: -10px" align="center">
 		<p style="text-align: center; color:#4a4a4a; font-weight: 400;">
     <span style="color: rgb(152, 150, 146);font-weight: bolder;">NerFuser</span> is a generalizable language-conditioned multi-task policy, capable of learning a 3D and multi-modal representation for multi-task manipulation with limited demonstrations.
@@ -1689,7 +1689,7 @@
 
   <div>
 		<h2>Generalization to Unseen Environments</h2>    
-    <p>We show the generalization ability of <span style="color: rgb(114, 112, 108);font-weight: bolder;">NeRFuser</span>  compared with  GNFactor. NeRFuser distills the feature of the vision-language foundation model to help the robotic manipulation, thus learning more generalizable features and more robust to distractors in unseen environments.</p>
+    <p><span style="color: rgb(152, 150, 146);font-weight: bolder;">NeRFuser</span>  shows stronger generalization ability than GNFactor, being more robust and adaptive in unseen tasks. This is attributed to the 3D semantic pre-training and diffusion training. NeRFuser is optimized not only distinguish representation of various modalities from multi-task demonstrations but also become more robust and generalizable for novel environments with more comprehensive 3D understanding.</p>
     <br>
     <div class="content-video" style="margin-bottom: 48px">
     <div class="content-video-container">
@@ -1698,7 +1698,23 @@
         <h4 style="font-weight: bold;">Put item in Drawer with Distractor </h4>
 
           <div class="content-video-frame">
-            <h style="color: rgb(32,156,238);font-weight: bolder;">GNFactor</h> <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
+                <select id="eps-id-ours-0" onchange="updateSingleVideoOurs0()">
+                  <option value="0" selected="selected">01</option>
+                  <option value="1">02</option>
+                  <option value="2">03</option>
+                  <option value="3">04</option>
+                  <option value="4">05</option>
+                </select>
+              </div>
+              <br>
+              <video id="video-ours-0" muted="" autoplay="" loop="" width="100%">
+                <source src="videos/generalization/ours/put_item_in_drawer_with_distractor_0.mp4" type="video/mp4">
+              </video>
+          </div>
+
+          <div class="content-video-frame">
+            <h style="color: rgb(255,153,0);font-weight: bolder;">GNFactor</h> <div class="select is-small">
                 <select id="eps-id-baseline-0" onchange="updateSingleVideoBaseline0()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1714,44 +1730,12 @@
               </video>
           </div>
 
-          <div class="content-video-frame">
-            <h style="color: rgb(255,153,0); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
-                <select id="eps-id-ours-0" onchange="updateSingleVideoOurs0()">
-                  <option value="0" selected="selected">01</option>
-                  <option value="1">02</option>
-                  <option value="2">03</option>
-                  <option value="3">04</option>
-                  <option value="4">05</option>
-                </select>
-              </div>
-              <br>
-              <video id="video-ours-0" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/ours/put_item_in_drawer_with_distractor_0.mp4" type="video/mp4">
-              </video>
-          </div>
-
       </div>
-      
-      <div class="content-video" style="margin-bottom: 20px">
-        <h4 style="font-weight: bold;">Slide Larger Block to Target </h4>
-          <div class="content-video-frame">
-            <h style="color: rgb(32,156,238);font-weight: bolder;">PerAct</h> <div class="select is-small">
-                <select id="eps-id-baseline-1" onchange="updateSingleVideoBaseline1()">
-                  <option value="0" selected="selected">01</option>
-                  <option value="1">02</option>
-                  <option value="2">03</option>
-                  <option value="3">04</option>
-                  <option value="4">05</option>
-                </select>
-              </div>
-              <br>
-              <video id="video-baseline-1" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/1_slide_large_block/baseline/0.mp4" type="video/mp4">
-              </video>
-          </div>
 
+      <div class="content-video" style="margin-bottom: 20px">
+        <h4 style="font-weight: bold;">Place Wine at Rack Location New Position </h4>
           <div class="content-video-frame">
-            <h style="color: rgb(255,153,0); font-weight: bolder;">GNFactor</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-1" onchange="updateSingleVideoOurs1()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1762,15 +1746,48 @@
               </div>
               <br>
               <video id="video-ours-1" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/1_slide_large_block/ours/0.mp4" type="video/mp4">
+                <source src="videos/generalization/ours/place_wine_at_rack_location_new_position_0.mp4" type="video/mp4">
               </video>
           </div>
+
+          <div class="content-video-frame">
+            <h style="color: rgb(255,153,0);font-weight: bolder;">GNFactor</h> <div class="select is-small">
+                <select id="eps-id-baseline-1" onchange="updateSingleVideoBaseline1()">
+                  <option value="0" selected="selected">01</option>
+                  <option value="1">02</option>
+                  <option value="2">03</option>
+                  <option value="3">04</option>
+                  <option value="4">05</option>
+                </select>
+              </div>
+              <br>
+              <video id="video-baseline-1" muted="" autoplay="" loop="" width="100%">
+                <source src="videos/generalization/baseline/place_wine_at_rack_location_new_position_0.mp4" type="video/mp4">
+              </video>
+          </div>
+
       </div>
 
       <div class="content-video" style="margin-bottom: 20px">
-        <h4 style="font-weight: bold;">Slide Smaller Block to Target </h4>
+        <h4 style="font-weight: bold;">Slide Larger Block to Target </h4>
           <div class="content-video-frame">
-            <h style="color: rgb(32,156,238);font-weight: bolder;">PerAct</h> <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
+                <select id="eps-id-ours-2" onchange="updateSingleVideoOurs2()">
+                  <option value="0" selected="selected">01</option>
+                  <option value="1">02</option>
+                  <option value="2">03</option>
+                  <option value="3">04</option>
+                  <option value="4">05</option>
+                </select>
+              </div>
+              <br>
+              <video id="video-ours-2" muted="" autoplay="" loop="" width="100%">
+                <source src="videos/generalization/ours/slide_large_block_to_color_target_0.mp4" type="video/mp4">
+              </video>
+          </div>
+
+          <div class="content-video-frame">
+            <h style="color: rgb(255,153,0);font-weight: bolder;">GNFactor</h> <div class="select is-small">
                 <select id="eps-id-baseline-2" onchange="updateSingleVideoBaseline2()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1781,89 +1798,16 @@
               </div>
               <br>
               <video id="video-baseline-2" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/2_slide_small_block/baseline/0.mp4" type="video/mp4">
+                <source src="videos/generalization/baseline/slide_large_block_to_color_target_0.mp4" type="video/mp4">
               </video>
           </div>
 
-          <div class="content-video-frame">
-            <h style="color: rgb(255,153,0); font-weight: bolder;">GNFactor</h> (ours) <div class="select is-small">
-                <select id="eps-id-ours-2" onchange="updateSingleVideoOurs1()">
-                  <option value="0" selected="selected">01</option>
-                  <option value="1">02</option>
-                  <option value="2">03</option>
-                  <option value="3">04</option>
-                  <option value="4">05</option>
-                </select>
-              </div>
-              <br>
-              <video id="video-ours-2" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/2_slide_small_block/ours/0.mp4" type="video/mp4">
-              </video>
-          </div>
       </div>
 
-      <div style="text-align: center; margin-top: 10px; margin-bottom:20px">
-        <button id="showMoreBtn" style="width: 130px; height: 35px; border-radius: 20px; background-color: #1e1c1c; color: #fff; font-size: 17px; border: none; cursor: pointer;">
-          More Tasks
-        </button>
-        </div>
-        
-      
-      <div class="content-video hidden-row" style="margin-bottom: 20px;">
-        <h4 style="font-weight: bold;">Push Buttons with Distractor</h4>
+      <div class="content-video" style="margin-bottom: 20px">
+        <h4 style="font-weight: bold;">Meat off Grill New Position </h4>
           <div class="content-video-frame">
-            <h style="color: rgb(32,156,238);font-weight: bolder;">PerAct</h> <div class="select is-small">
-                <select id="eps-id-baseline-5" onchange="updateSingleVideoBaseline5()">
-                  <option value="0" selected="selected">01</option>
-                  <option value="1">02</option>
-                  <option value="2">03</option>
-                  <option value="3">04</option>
-                  <option value="4">05</option>
-                </select>
-              </div>
-              <br>
-              <video id="video-baseline-5" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/5_push_buttons_with_distractor/baseline/0.mp4" type="video/mp4">
-              </video>
-          </div>
-
-          <div class="content-video-frame">
-            <h style="color: rgb(255,153,0); font-weight: bolder;">GNFactor</h> (ours) <div class="select is-small">
-                <select id="eps-id-ours-5" onchange="updateSingleVideoOurs1()">
-                  <option value="0" selected="selected">01</option>
-                  <option value="1">02</option>
-                  <option value="2">03</option>
-                  <option value="3">04</option>
-                  <option value="4">05</option>
-                </select>
-              </div>
-              <br>
-              <video id="video-ours-5" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/5_push_buttons_with_distractor/ours/0.mp4" type="video/mp4">
-              </video>
-          </div>
-      </div>
-
-      <div class="content-video hidden-row" style="margin-bottom: 20px">
-        <h4 style="font-weight: bold;">Open Drawer in New Position</h4>
-          <div class="content-video-frame">
-            <h style="color: rgb(32,156,238);font-weight: bolder;">PerAct</h> <div class="select is-small">
-                <select id="eps-id-baseline-3" onchange="updateSingleVideoBaseline3()">
-                  <option value="0" selected="selected">01</option>
-                  <option value="1">02</option>
-                  <option value="2">03</option>
-                  <option value="3">04</option>
-                  <option value="4">05</option>
-                </select>
-              </div>
-              <br>
-              <video id="video-baseline-3" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/3_open_drawer_new_position/baseline/0.mp4" type="video/mp4">
-              </video>
-          </div>
-
-          <div class="content-video-frame">
-            <h style="color: rgb(255,153,0); font-weight: bolder;">GNFactor</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-3" onchange="updateSingleVideoOurs3()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1874,16 +1818,13 @@
               </div>
               <br>
               <video id="video-ours-3" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/3_open_drawer_new_position/ours/0.mp4" type="video/mp4">
+                <source src="videos/generalization/ours/meat_off_grill_new_position_0.mp4" type="video/mp4">
               </video>
           </div>
-      </div>
 
-      <div class="content-video hidden-row" style="margin-bottom: 20px">
-        <h4 style="font-weight: bold;">Turn Tap in New Position</h4>
           <div class="content-video-frame">
-            <h style="color: rgb(32,156,238);font-weight: bolder;">PerAct</h> <div class="select is-small">
-                <select id="eps-id-baseline-4" onchange="updateSingleVideoBaseline4()">
+            <h style="color: rgb(255,153,08);font-weight: bolder;">GNFactor</h> <div class="select is-small">
+                <select id="eps-id-baseline-3" onchange="updateSingleVideoBaseline3()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
                   <option value="2">03</option>
@@ -1892,13 +1833,17 @@
                 </select>
               </div>
               <br>
-              <video id="video-baseline-4" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/4_turn_tap_new_position/baseline/0.mp4" type="video/mp4">
+              <video id="video-baseline-3" muted="" autoplay="" loop="" width="100%">
+                <source src="videos/generalization/baseline/meat_off_grill_new_position_0.mp4" type="video/mp4">
               </video>
           </div>
 
+      </div>
+
+      <div class="content-video" style="margin-bottom: 20px">
+        <h4 style="font-weight: bold;">Put Money in Safe with Distractor</h4>
           <div class="content-video-frame">
-            <h style="color: rgb(255,153,0); font-weight: bolder;">GNFactor</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-4" onchange="updateSingleVideoOurs4()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1909,9 +1854,27 @@
               </div>
               <br>
               <video id="video-ours-4" muted="" autoplay="" loop="" width="100%">
-                <source src="videos/generalization/4_turn_tap_new_position/ours/0.mp4" type="video/mp4">
+                <source src="videos/generalization/ours/put_money_in_safe_with_distractor_0.mp4" type="video/mp4">
               </video>
           </div>
+
+          <div class="content-video-frame">
+            <h style="color: rgb(255,153,0);font-weight: bolder;">GNFactor</h> <div class="select is-small">
+                <select id="eps-id-baseline-4" onchange="updateSingleVideoBaseline4()">
+                  <option value="0" selected="selected">01</option>
+                  <option value="1">02</option>
+                  <option value="2">03</option>
+                  <option value="3">04</option>
+                  <option value="4">05</option>
+                </select>
+              </div>
+              <br>
+              <video id="video-baseline-4" muted="" autoplay="" loop="" width="100%">
+                <source src="videos/generalization/baseline/put_money_in_safe_with_distractor_0.mp4" type="video/mp4">
+              </video>
+          </div>
+
+      </div>
       </div>
 
       <script>
@@ -1952,8 +1915,7 @@
       console.log("single", task, inst)
 
       var video = document.getElementById("video-baseline-0");
-      // video.src = "videos/generalization/" + 'baseline/' + task + inst +".mp4"
-      video.src = "videos/generalization/baseline/put_item_in_drawer_with_distractor_9.mp4"
+      video.src = "videos/generalization/" + 'baseline/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
@@ -1961,7 +1923,6 @@
     function updateSingleVideoOurs0() {
       var inst = document.getElementById("eps-id-ours-0").value;
       var task =  "put_item_in_drawer_with_distractor_";
-      var debug = "videos/generalization/" + 'ours/' + task + inst +".mp4"
 
       console.log("single", task, inst)
 
@@ -1972,72 +1933,72 @@
     }
     function updateSingleVideoBaseline1() {
       var inst = document.getElementById("eps-id-baseline-1").value;
-      var task =  "1_slide_large_block";
+      var task =  "place_wine_at_rack_location_new_position_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-baseline-1");
-      video.src = "videos/generalization/" + task + '/baseline/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'baseline/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
     function updateSingleVideoOurs1() {
       var inst = document.getElementById("eps-id-ours-1").value;
-      var task =  "1_slide_large_block";
+      var task =  "place_wine_at_rack_location_new_position_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-ours-1");
-      video.src = "videos/generalization/" + task + '/ours/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'ours/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
     function updateSingleVideoBaseline2() {
       var inst = document.getElementById("eps-id-baseline-2").value;
-      var task =  "2_slide_small_block";
+      var task =  "slide_large_block_to_color_target_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-baseline-2");
-      video.src = "videos/generalization/" + task + '/baseline/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'baseline/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
     function updateSingleVideoOurs2() {
       var inst = document.getElementById("eps-id-ours-2").value;
-      var task =  "2_slide_small_block";
+      var task =  "slide_large_block_to_color_target_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-ours-2");
-      video.src = "videos/generalization/" + task + '/ours/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'ours/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
     function updateSingleVideoBaseline3() {
       var inst = document.getElementById("eps-id-baseline-3").value;
-      var task =  "3_open_drawer_new_position";
+      var task =  "meat_off_grill_new_position_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-baseline-3");
-      video.src = "videos/generalization/" + task + '/baseline/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'baseline/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
     function updateSingleVideoOurs3() {
       var inst = document.getElementById("eps-id-ours-3").value;
-      var task =  "3_open_drawer_new_position";
+      var task =  "meat_off_grill_new_position_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-ours-3");
-      video.src = "videos/generalization/" + task + '/ours/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'ours/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
@@ -2046,51 +2007,28 @@
 
     function updateSingleVideoBaseline4() {
       var inst = document.getElementById("eps-id-baseline-4").value;
-      var task =  "4_turn_tap_new_position";
+      var task =  "put_money_in_safe_with_distractor_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-baseline-4");
-      video.src = "videos/generalization/" + task + '/baseline/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'baseline/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
     function updateSingleVideoOurs4() {
       var inst = document.getElementById("eps-id-ours-4").value;
-      var task =  "4_turn_tap_new_position";
+      var task =  "put_money_in_safe_with_distractor_";
 
       console.log("single", task, inst)
 
       var video = document.getElementById("video-ours-4");
-      video.src = "videos/generalization/" + task + '/ours/' + inst +".mp4"
+      video.src = "videos/generalization/" + 'ours/' + task + inst +".mp4"
       video.playbackRate = 1.0;
       video.play();
     }
 
-    function updateSingleVideoBaseline5() {
-      var inst = document.getElementById("eps-id-baseline-5").value;
-      var task =  "5_push_buttons_with_distractor";
-
-      console.log("single", task, inst)
-
-      var video = document.getElementById("video-baseline-5");
-      video.src = "videos/generalization/" + task + '/baseline/' + inst +".mp4"
-      video.playbackRate = 1.0;
-      video.play();
-    }
-
-    function updateSingleVideoOurs5() {
-      var inst = document.getElementById("eps-id-ours-5").value;
-      var task =  "5_push_buttons_with_distractor";
-
-      console.log("single", task, inst)
-
-      var video = document.getElementById("video-ours-5");
-      video.src = "videos/generalization/" + task + '/ours/' + inst +".mp4"
-      video.playbackRate = 1.0;
-      video.play();
-    }
 
   </script>
 
