@@ -1,8 +1,8 @@
 
 <html><script>window._wordtune_extension_installed = true;</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>NeRFuser</title>
-	<meta property="og:title" content="NeRFuser">
-	<meta property="og:description" content="NeRFuser: Diffusion Guided Multi-Task 3D Policy Learning">
+	<title>DNAct</title>
+	<meta property="og:title" content="DNAct">
+	<meta property="og:description" content="DNAct: Diffusion Guided Multi-Task 3D Policy Learning">
 
 <style>@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap);</style><style>/**
  * @license
@@ -1555,10 +1555,10 @@
       <!-- <video muted="" autoplay="" loop="" width="5%" style="margin-right: -10px; margin-bottom: -20px;">
         <source src="videos/voxel.MP4" type="video/mp4">
       </video> -->
-      NeRFuser</span> 
+      DNAct</span> 
       <br>
       <span class="nerf_subheader_v2">
-        NeRFuser: Diffusion Guided Multi-Task 3D Policy Learning</h1>
+        DNAct: Diffusion Guided Multi-Task 3D Policy Learning</h1>
       </span>
 	<table class="authors">
 		<tbody>
@@ -1577,7 +1577,7 @@
 	<div class="figure" style="height: 400px; background-image: url(figures/main_method.png); margin-top: -30px;"></div>
 	<div style="margin: auto; margin-top: -10px" align="center">
 		<p style="text-align: center; color:#4a4a4a; font-weight: 400;">
-    <span style="color: rgb(152, 150, 146);font-weight: bolder;">NerFuser</span> is a generalizable language-conditioned multi-task policy, capable of learning a 3D and multi-modal representation for multi-task manipulation with limited demonstrations.
+    <span style="color: rgb(152, 150, 146);font-weight: bolder;">DNAct</span> is a generalizable language-conditioned multi-task policy, capable of learning a 3D and multi-modal representation for multi-task manipulation with limited demonstrations.
     
 		</p>
 	</div>
@@ -1675,11 +1675,11 @@
 		<h2>Abstract</h2>
 		<p class="abstract">
 			
-      This paper presents NeRFuser, a language-conditioned multi-task policy framework that integrates neural rendering pre-training and diffusion training to enforce multi-modality learning in action sequence spaces. To learn a generalizable multi-task policy with few demonstrations, the pre-training phase of NeRFuser leverages neural rendering to distill 2D semantic features from foundation models such as Stable Diffusion to a 3D space, which provides a comprehensive semantic understanding regarding the scene. Consequently, it allows various applications to challenging robotic tasks requiring rich 3D semantics and accurate geometry.
+      This paper presents DNAct, a language-conditioned multi-task policy framework that integrates neural rendering pre-training and diffusion training to enforce multi-modality learning in action sequence spaces. To learn a generalizable multi-task policy with few demonstrations, the pre-training phase of DNAct leverages neural rendering to distill 2D semantic features from foundation models such as Stable Diffusion to a 3D space, which provides a comprehensive semantic understanding regarding the scene. Consequently, it allows various applications to challenging robotic tasks requiring rich 3D semantics and accurate geometry.
       <br>
       <br>
       Furthermore, we introduce a novel approach utilizing diffusion training to learn a vision and language feature that encapsulates the inherent multi-modality in the multi-task demonstrations. By reconstructing the action sequences from different tasks via the diffusion process, the model is capable of distinguishing different modalities and thus improving the robustness and the generalizability of the learned representation.
-      NeRFuser significantly surpasses SOTA NeRF-based multi-task manipulation approaches with over 30% improvement in success rate.
+      DNAct significantly surpasses SOTA NeRF-based multi-task manipulation approaches with over 30% improvement in success rate.
 		</p>
 	</div>
 
@@ -1689,7 +1689,7 @@
 
   <div>
 		<h2>Generalization to Unseen Environments</h2>    
-    <p><span style="color: rgb(152, 150, 146);font-weight: bolder;">NeRFuser</span>  shows stronger generalization ability than GNFactor, being more robust and adaptive in unseen tasks. This is attributed to the 3D semantic pre-training and diffusion training. NeRFuser is optimized to not only distinguish representation of various modalities from multi-task demonstrations but also become more robust and generalizable for novel environments with more comprehensive 3D understanding.</p>
+    <p><span style="color: rgb(152, 150, 146);font-weight: bolder;">DNAct</span>  shows stronger generalization ability than GNFactor, being more robust and adaptive in unseen tasks. This is attributed to the 3D semantic pre-training and diffusion training. DNAct is optimized not only distinguish representation of various modalities from multi-task demonstrations but also become more robust and generalizable for novel environments with more comprehensive 3D understanding.</p>
     <br>
     <div class="content-video" style="margin-bottom: 48px">
     <div class="content-video-container">
@@ -1698,7 +1698,7 @@
         <h4 style="font-weight: bold;">Put item in Drawer with Distractor </h4>
 
           <div class="content-video-frame">
-            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">DNAct</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-0" onchange="updateSingleVideoOurs0()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1735,7 +1735,7 @@
       <div class="content-video" style="margin-bottom: 20px">
         <h4 style="font-weight: bold;">Place Wine at Rack Location New Position </h4>
           <div class="content-video-frame">
-            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">DNAct</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-1" onchange="updateSingleVideoOurs1()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1771,7 +1771,7 @@
       <div class="content-video" style="margin-bottom: 20px">
         <h4 style="font-weight: bold;">Slide Larger Block to Target </h4>
           <div class="content-video-frame">
-            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">DNAct</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-2" onchange="updateSingleVideoOurs2()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1807,7 +1807,7 @@
       <div class="content-video" style="margin-bottom: 20px">
         <h4 style="font-weight: bold;">Meat off Grill New Position </h4>
           <div class="content-video-frame">
-            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">DNAct</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-3" onchange="updateSingleVideoOurs3()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
@@ -1843,7 +1843,7 @@
       <div class="content-video" style="margin-bottom: 20px">
         <h4 style="font-weight: bold;">Put Money in Safe with Distractor</h4>
           <div class="content-video-frame">
-            <h style="color: rgb(152, 150, 146); font-weight: bolder;">NeRFuser</h> (ours) <div class="select is-small">
+            <h style="color: rgb(152, 150, 146); font-weight: bolder;">DNAct</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-4" onchange="updateSingleVideoOurs4()">
                   <option value="0" selected="selected">01</option>
                   <option value="1">02</option>
