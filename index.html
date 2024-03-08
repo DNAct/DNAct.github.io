@@ -1549,6 +1549,35 @@
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- https://docs.mathjax.org/en/latest/web/configuration.html#configuration-using-an-in-line-script -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  <script
+  defer
+  src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
  
   
 </head>
@@ -1769,6 +1798,112 @@
 </div>
 <hr>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3">3D Semantic Scene Understanding</h3>
+    <div class="content has-text-justified">
+    <p>
+      DNAct empowers pixel-wise semantic scene understanding from any novel view, even with unseen labels, by mapping semantically 
+      close labels to similar regions in the embedding space of 2D foundation models. <br> 
+    </p>
+    </div>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <h2 class="title is-6">Synthetic Scene</h2>
+        <div>
+          <img-comparison-slider>
+            <figure slot="first" class="before">
+              <img width="100%" src="./NVS/hit_baseball_rgb.gif">
+            </figure>
+            <figure slot="second" class="after">
+              <img width="100%" src="./NVS/hit_baseball_pca.gif">
+          </img-comparison-slider>
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-6">Real Scene</h2>
+        <div>
+          <img-comparison-slider>
+            <figure slot="first" class="before">
+              <img width="100%" src="./NVS/stack_block_rgb.gif">
+            </figure>
+            <figure slot="second" class="after">
+              <img width="100%" src="./NVS/stack_block_pca.gif">
+          </img-comparison-slider>
+        </div>
+      </div>
+
+      
+      <!--/ Matting. -->
+    <!-- </div>
+    <div class="columns is-centered"> -->
+
+      <!-- <div class="column">
+        <h2 class="title is-6">Rearrange</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/editing/edit_scene_rearrange.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-6">Editing</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/editing/edit_scene_editing.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div> -->
+
+      
+      <!--/ Matting. -->
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        <i>Experience sync issues with the GIFs? Simply refresh the webpage to synchronize playback.</i>
+      </p>
+    </div>
+
+    <style>
+      .before,
+      .after {
+        margin: 0;
+      }
+    
+      .before figcaption,
+      .after figcaption {
+        background: #fff;
+        border: 1px solid #c0c0c0;
+        border-radius: 4px;
+        color: #2e3452;
+        opacity: 0.8;
+        padding: 4px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 100%;
+      }
+    
+      .before figcaption {
+        left: 4px;
+      }
+    
+      .after figcaption {
+        right: 4px;
+      }
+    </style>
+  </div>
+</section>
+
 
   <div class="hr"></div>
 
@@ -1818,7 +1953,7 @@
       </div>
 
       <div class="content-video" style="margin-bottom: 20px">
-        <h4 style="font-weight: bold;">Place Wine at Rack Location New Position </h4>
+        <h4 style="font-weight: bold;">Place Wine at Rack Location in New Position </h4>
           <div class="content-video-frame">
             <h style="color: rgb(152, 150, 146); font-weight: bolder;">DNAct</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-1" onchange="updateSingleVideoOurs1()">
@@ -1890,7 +2025,7 @@
       </div>
 
       <div class="content-video" style="margin-bottom: 20px">
-        <h4 style="font-weight: bold;">Meat off Grill New Position </h4>
+        <h4 style="font-weight: bold;">Meat off Grill in New Position </h4>
           <div class="content-video-frame">
             <h style="color: rgb(152, 150, 146); font-weight: bolder;">DNAct</h> (ours) <div class="select is-small">
                 <select id="eps-id-ours-3" onchange="updateSingleVideoOurs3()">
