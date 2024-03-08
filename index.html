@@ -1764,11 +1764,11 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
 <div>
   <h2>Method</h2>    
   <p class="abstract">
-    <span style="color: rgb(152, 150, 146);font-weight: bolder;">DNAct</span> first leverages NeRF pre-training to distill 2D semantic features from foundation models to a 3D space, which provides a comprehensive semantic understanding regarding the scene. 
-    To develop a scene-agnostic 3D encoder capable of providing comprehensive 3D semantic information of complex environments, we leverage neural rendering and knowledge distillation for 3D encoder pre-training. This method constructs 3D semantics from a 2D foundational model through neural rendering with NeRF. With higher sample efficiency, this pretraining paradigm significantly facilitates training efficiency and model performance across various task domains. 
+    <span style="color: rgb(152, 150, 146);font-weight: bolder;">DNAct</span> first pretrains a 3D encoder by distilling 2D semantic features from foundation models to a 3D space via neural rendering with NeRF. The pre-trained 3D representation provides a comprehensive semantic understanding regarding the scene. With higher sample efficiency, this pretraining stage significantly facilitates training efficiency and model performance across various task domains. Additionlly, we adopt a learning-from-scratch PointNext encoder to capture the accurate 3D geometry of the scene, which offers better generalization and in-domain adaptation capabilities.
     <br>
     <br>
-    To further learn a vision and language feature that encapsulates the inherent multi-modality in the multi-task demonstrations, DNAct is optimized to reconstructs the action sequences from different tasks via diffusion process. The proposed diffusion training at the training phase enables the model to not only distinguish representation of various modalities arising from multi-task demonstrations but also become more robust and generalizable for novel objects and arrangements
+    Subsequently, DNAct is jointly optimized via a diffusion process, which involves the optimization of a 3D feature-conditioned noise predictor and the predictor is designed to reconstruct action sequences across different tasks. 
+    The diffusion training enables the model to not only distinguish representation of various modalities arising from multi-task demonstrations but also become more robust and generalizable for novel objects and arrangements.
     
     <br>
   </p>
@@ -1787,7 +1787,8 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
     <div class="content has-text-justified">
     <p>
       DNAct learns a unified 3D and semantic representation via generalizable NeRF. We not only utilize the neural rendering to synthesize novel views in RGB but also
-      predict the corresponding semantic features from 2D foundation models. From distilling pre-trained 2D features, we learn a generalizable 3D representation with commonsense priors from internet-scale datasets. This pre-trained representation equips the policy with out-of-distribution generalization ability. <br> 
+      predict the corresponding semantic features from 2D foundation models. From distilling pre-trained 2D features, we learn a generalizable 3D representation with commonsense priors from internet-scale datasets. This pre-trained representation equips the policy with out-of-distribution generalization ability. 
+      Below is the results of novel view synthesis for both RGB and feature embedding using only 3 camera views.<br> 
     </p>
     </div>
     <div class="columns is-centered">
