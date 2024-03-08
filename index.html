@@ -1549,33 +1549,15 @@
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- https://docs.mathjax.org/en/latest/web/configuration.html#configuration-using-an-in-line-script -->
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-  </script>
-  <script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-  </script>
-
   <script
   defer
-  src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
-  ></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
-  />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+/>
+  
 
 
  
@@ -1810,98 +1792,26 @@
     <div class="columns is-centered">
 
       <div class="column">
-        <h2 class="title is-6">Synthetic Scene</h2>
+        <h2 class="title is-6">Hit the ball</h2>
         <div>
           <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./NVS/hit_baseball_rgb.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./NVS/hit_baseball_pca.gif">
+            <img slot="first" src="./NVS/hit_baseball_rgb.gif" />
+            <img slot="second" src="./NVS/hit_baseball_pca.gif" />
           </img-comparison-slider>
         </div>
       </div>
 
       <div class="column">
-        <h2 class="title is-6">Real Scene</h2>
+        <h2 class="title is-6">Stack the block</h2>
         <div>
           <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./NVS/stack_block_rgb.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./NVS/stack_block_pca.gif">
+            <img slot="first" src="./NVS/stack_block_rgb.gif" />
+            <img slot="second" src="./NVS/stack_block_pca.gif" />
           </img-comparison-slider>
         </div>
       </div>
 
-      
-      <!--/ Matting. -->
-    <!-- </div>
-    <div class="columns is-centered"> -->
-
-      <!-- <div class="column">
-        <h2 class="title is-6">Rearrange</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/editing/edit_scene_rearrange.mp4"
-              type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <h2 class="title is-6">Editing</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./media/editing/edit_scene_editing.mp4"
-              type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div> -->
-
-      
-      <!--/ Matting. -->
     </div>
-    <div class="content has-text-justified">
-      <p>
-        <i>Experience sync issues with the GIFs? Simply refresh the webpage to synchronize playback.</i>
-      </p>
-    </div>
-
-    <style>
-      .before,
-      .after {
-        margin: 0;
-      }
-    
-      .before figcaption,
-      .after figcaption {
-        background: #fff;
-        border: 1px solid #c0c0c0;
-        border-radius: 4px;
-        color: #2e3452;
-        opacity: 0.8;
-        padding: 4px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 100%;
-      }
-    
-      .before figcaption {
-        left: 4px;
-      }
-    
-      .after figcaption {
-        right: 4px;
-      }
-    </style>
-  </div>
 </section>
 
 
