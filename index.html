@@ -1786,8 +1786,8 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
     <h3 class="title is-3">3D Semantic Scene Understanding</h3>
     <div class="content has-text-justified">
     <p>
-      DNAct empowers pixel-wise semantic scene understanding from any novel view, even with unseen labels, by mapping semantically 
-      close labels to similar regions in the embedding space of 2D foundation models. <br> 
+      DNAct learns a unified 3D and semantic representation via generalizable NeRF. We not only utilize the neural rendering to synthesize novel views in RGB but also
+      predict the corresponding semantic features from 2D foundation models. From distilling pre-trained 2D features, we learn a generalizable 3D representation with commonsense priors from internet-scale datasets. This pre-trained representation equips the policy with out-of-distribution generalization ability. <br> 
     </p>
     </div>
     <div class="columns is-centered">
@@ -1813,7 +1813,7 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
       </div>
 
       <div class="column">
-        <h2 class="title is-6">Put the block in bowl</h2>
+        <h2 class="title is-6">Put in the bowl</h2>
         <div>
           <img-comparison-slider>
             <img slot="first" src="./NVS/put_in_bowl_rgb.gif" />
@@ -1827,13 +1827,10 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
 
 <section class="section">
   <div class="container is-max-desktop">
-  <h3 class="title is-3">Segment Anything from Any View</h3>
+  <h3 class="title is-3">Visualization of pre-trained 3D feature</h3>
   <div class="content has-text-justified">
   <p>
-    To segment anything in a 3D scene, a few training view images is all you need. 
-    We seamlessly integrate the latest computer vision foundation model, Segment Anything Model (SAM), 
-    into the novel view synthesis pipeline through feature field distillation. This integration enables swift and precise 
-    responses without invoking the original SAM workflow. <br>
+    We show the visualization of the 3D point clouds and the corresponding point features below. Our model can effectively learn an accurate 3D semantic representation and parse different objects in the scene.<br>
   </p>
   </div>
   
@@ -1855,7 +1852,7 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
 
     <!-- Matting. -->
     <div class="column">
-      <h2 class="title is-6">Put box in bowl</h2>
+      <h2 class="title is-6">Put in the bowl</h2>
       <div class="columns is-centered">
         <div class="column content">
           <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
@@ -1868,7 +1865,7 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
     </div>
 
     <div class="column">
-      <h2 class="title is-6">Sweep block</h2>
+      <h2 class="title is-6">Sweep to dustpan</h2>
       <div class="columns is-centered">
         <div class="column content">
           <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
@@ -1881,7 +1878,7 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
     </div>
 
     <div class="column">
-      <h2 class="title is-6">Put box in bin</h2>
+      <h2 class="title is-6">Put the box in the bin</h2>
       <div class="columns is-centered">
         <div class="column content">
           <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
