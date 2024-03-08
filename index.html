@@ -1760,26 +1760,6 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
     </div>
 	</div>
 
-  <div class="hr"></div>
-<div>
-  <h2>Method</h2>    
-  <p class="abstract">
-    <span style="color: rgb(152, 150, 146);font-weight: bolder;">DNAct</span> first pretrains a 3D encoder by distilling 2D semantic features from foundation models to a 3D space via neural rendering with NeRF. The pre-trained 3D representation provides a comprehensive semantic understanding regarding the scene. With higher sample efficiency, this pretraining stage significantly facilitates training efficiency and model performance across various task domains. Additionlly, we adopt a learning-from-scratch PointNext encoder to capture the accurate 3D geometry of the scene, which offers better generalization and in-domain adaptation capabilities.
-    <br>
-    <br>
-    Subsequently, DNAct is jointly optimized via a diffusion process, which involves the optimization of a 3D feature-conditioned noise predictor and the predictor is designed to reconstruct action sequences across different tasks. 
-    The diffusion training enables the model to not only distinguish representation of various modalities arising from multi-task demonstrations but also become more robust and generalizable for novel objects and arrangements.
-    
-    <br>
-  </p>
-  <div class="figure" style="height: 430px; margin-top: 0px;">
-    <video width="100%" height="100%" autoplay="" muted="" loop="">
-        <source src="presentation_video/DNAct_method_final.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-<hr>
-</div>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -1906,6 +1886,27 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
 
   </div>
 </section>
+
+<div class="hr"></div>
+<div>
+  <h2>Method</h2>    
+  <p class="abstract">
+    <span style="color: rgb(152, 150, 146);font-weight: bolder;">DNAct</span> first pretrains a 3D encoder by distilling 2D semantic features from foundation models to a 3D space via neural rendering with NeRF. The pre-trained 3D representation provides a comprehensive semantic understanding regarding the scene. With higher sample efficiency, this pretraining stage significantly facilitates training efficiency and model performance across various task domains. Additionlly, we adopt a learning-from-scratch PointNext encoder to capture the accurate 3D geometry of the scene, which offers better generalization and in-domain adaptation capabilities.
+    <br>
+    <br>
+    Subsequently, DNAct is jointly optimized via a diffusion process, which involves the optimization of a 3D feature-conditioned noise predictor and the predictor is designed to reconstruct action sequences across different tasks. 
+    The diffusion training enables the model to not only distinguish representation of various modalities arising from multi-task demonstrations but also become more robust and generalizable for novel objects and arrangements.
+    
+    <br>
+  </p>
+  <div class="figure" style="height: 430px; margin-top: 0px;">
+    <video width="100%" height="100%" autoplay="" muted="" loop="">
+        <source src="presentation_video/DNAct_method_final_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+<hr>
+</div>
 
 <!-- 
   <div class="hr"></div>
