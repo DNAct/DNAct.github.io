@@ -1824,6 +1824,90 @@ src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
     </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+  <h3 class="title is-3">Segment Anything from Any View</h3>
+  <div class="content has-text-justified">
+  <p>
+    To segment anything in a 3D scene, a few training view images is all you need. 
+    We seamlessly integrate the latest computer vision foundation model, Segment Anything Model (SAM), 
+    into the novel view synthesis pipeline through feature field distillation. This integration enables swift and precise 
+    responses without invoking the original SAM workflow. <br>
+  </p>
+  </div>
+  
+  <div class="columns is-centered">
+    <!-- Visual Effects. -->
+    <!-- Matting. -->
+    <div class="column">
+      <h2 class="title is-6">Hit the ball</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
+            <source src="./task_vis/hit_pcd_vis.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Matting. -->
+    <div class="column">
+      <h2 class="title is-6">Put box in bowl</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
+            <source src="./task_vis/bowl_pcd_vis.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="column">
+      <h2 class="title is-6">Sweep block</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
+            <source src="./task_vis/sweep_pcd_vis.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="column">
+      <h2 class="title is-6">Put box in bin</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
+            <source src="./task_vis/bin_pcd_vis.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="column">
+      <h2 class="title is-6">Stack the block</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <video id="matting-video" autoplay controls muted loop playsinline width="100%" height="auto">
+            <source src="./task_vis/block_pcd_vis.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <div class="hr"></div>
 
