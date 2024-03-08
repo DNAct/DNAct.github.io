@@ -1545,6 +1545,10 @@
   <link rel="icon" href="figures/white_robot.jpg">
 	<link rel="stylesheet" href="./files/font-awesome.min.css">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
  
   
 </head>
@@ -1565,12 +1569,71 @@
 			<tr>
 				<td>
 					<h3>
-            Anonymous
+            <span class="authors">
+            <a href="https://geyan21.github.io/" style="font-weight: bold;">Ge Yan</a>,&nbsp;
+            <a href="https://kristery.github.io/" style="font-weight: bold;">Yueh-Hua Wu</a>,&nbsp;
+            <a href="https://xiaolonw.github.io" style="font-weight: bold;">Xiaolong Wang</a>
+          </span>
+            <br>
+          <span class="authors-affiliation">
+           UC San Diego
+          </span>
+          <br>
+        <span class="authors-affiliation">
+      <sup>*</sup>Equal contribution</span>
+
 					</h3>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+</div>
+
+<div class="column has-text-centered" style="margin-top: -20px;">
+  <div class="publication-links">
+      <span class="link-block">
+          <a href="https://arxiv.org/abs/2403.04115"
+             class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span style="font-weight: bolder;">arXiv</span>
+          </a>
+        </span>
+        &nbsp; 
+      <!-- PDF Link. -->
+    <!-- <span class="link-block">
+      <a href="CoRL2023_GNFactor.pdf"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+            <i class="fas fa-file-pdf"></i>
+        </span>
+        <span style="font-weight: bolder;">Paper</span>
+      </a>
+    </span>
+    &nbsp; -->
+    <!-- Code Link. -->
+    <span class="link-block">
+      <a href=""
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+            <i class="fab fa-github"></i>
+        </span>
+        <span style="font-weight: bolder;">Code</span>
+        </a>
+    </span>
+    &nbsp;
+    <!--twitter link-->
+  <!-- <span class="link-block">
+      <a href="https://twitter.com/xiaolonw/status/1697654370492469414?s=20"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+            <i class="fab fa-twitter"></i>
+        </span>
+        <span style="font-weight: bolder;">Twitter</span>
+        </a>
+    </span> -->
+  </div>
 </div>
 
 <div class="content">
@@ -1681,6 +1744,11 @@
       Furthermore, we introduce a novel approach utilizing diffusion training to learn a vision and language feature that encapsulates the inherent multi-modality in the multi-task demonstrations. By reconstructing the action sequences from different tasks via the diffusion process, the model is capable of distinguishing different modalities and thus improving the robustness and the generalizability of the learned representation.
       DNAct significantly surpasses SOTA NeRF-based multi-task manipulation approaches with over 30% improvement in success rate.
 		</p>
+    <div class="figure" style="height: 550px; margin-top: -40px;">
+      <video width="90%" height="90%" autoplay="" muted="" loop="">
+        <source src="presentation_video/DNAct_summary.mp4" type="video/mp4">
+		</video>
+    </div>
 	</div>
 
 
