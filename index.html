@@ -1744,13 +1744,31 @@
       Furthermore, we introduce a novel approach utilizing diffusion training to learn a vision and language feature that encapsulates the inherent multi-modality in the multi-task demonstrations. By reconstructing the action sequences from different tasks via the diffusion process, the model is capable of distinguishing different modalities and thus improving the robustness and the generalizability of the learned representation.
       DNAct significantly surpasses SOTA NeRF-based multi-task manipulation approaches with over 30% improvement in success rate.
 		</p>
-    <div class="figure" style="height: 450px; margin-top: 0px;">
-      <video width="80%" height="80%" autoplay="" muted="" loop="">
-        <source src="presentation_video/DNAct_summary.mp4" type="video/mp4">
-		</video>
+    <div class="publication-video">
+      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/7e7BL98Thag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe> -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/i3aw_jwqeLU?si=lbgeMaqPVPp4cAHL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 	</div>
 
+  <div class="hr"></div>
+<div>
+  <h2>Method</h2>    
+  <p class="abstract">
+    <span style="color: rgb(152, 150, 146);font-weight: bolder;">DNAct</span> leverages a NeRF pre-training to distill 2D semantic features from foundation models to a 3D space, which provides a comprehensive semantic understanding regarding the scene. 
+    To develop a scene-agnostic 3D encoder capable of providing comprehensive 3D semantic information of complex environments, we leverage neural rendering and knowledge distillation for 3D encoder pre-training. This method constructs 3D semantics from a 2D foundational model through neural rendering with NeRF. With higher sample efficiency, this pretraining paradigm significantly facilitates training efficiency and model performance across various task domains. 
+    <br>
+    <br>
+    To further learn a vision and language feature that encapsulates the inherent multi-modality in the multi-task demonstrations, DNAct is optimized to reconstructs the action sequences from different tasks via diffusion process. The proposed diffusion training at the training phase enables the model to not only distinguish representation of various modalities arising from multi-task demonstrations but also become more robust and generalizable for novel objects and arrangements
+    
+    <br>
+  </p>
+  <div class="figure" style="height: 430px; margin-top: 0px;">
+    <video width="100%" height="100%" autoplay="" muted="" loop="">
+        <source src="presentation_video/DNAct_method.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+<hr>
 
 
   <div class="hr"></div>
